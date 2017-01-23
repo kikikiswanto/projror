@@ -5,20 +5,33 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
 
+
 development:
   <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: rorappsv2_db
+  host: 127.0.0.1
+  pool: 5
+  username: kiki
+  password: kiswanto
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: rorappsv2_db
+  host: 127.0.0.1
+  pool: 5
+  username: kiki
+  password: kiswanto
 
 production:
   <<: *default
