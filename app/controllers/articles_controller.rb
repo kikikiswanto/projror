@@ -32,6 +32,10 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def show
+  	@article = Article.find_by_id(params[:id])
+  end
+
   private
   	def params_article
   		params.require(:article).permit(:title, :content, :status)
